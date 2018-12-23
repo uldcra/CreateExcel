@@ -1,3 +1,39 @@
-<p>
-  formularios works!
-</p>
+<div class="container">
+    <form [formGroup]="materialForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="">fechas</label>
+            <input class="form-control" type="date" formControlName="fecha">
+            <ng-container *ngIf="materialForm.controls['fecha'].touched">
+                <div *ngIf="materialForm.controls['fecha'].errors" class="alert alert-danger">
+                    fecha es necesario
+                </div>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <label for="">Producto</label>
+            <input class="form-control" type="text" formControlName="producto">
+            <ng-container *ngIf="materialForm.controls['producto'].touched">
+                <div *ngIf="materialForm.controls['producto'].errors?.required" class="alert alert-danger">
+                    El nombre del producto es necesario
+                </div>
+                <div *ngIf="materialForm.controls['producto'].errors?.minlength" class="alert alert-danger">
+                    Almenos 4 caracteres
+                </div>
+            </ng-container>
+        </div>
+        <div class="form-group">
+            <label for="">Trazabilidad</label>
+            <input class="form-control" type="text" formControlName="Trazabilidad">
+        </div>
+        <div class="form-group">
+            <label for="">Libre de plagas</label>
+            <input class="form-control" type="text" formControlName="plage">
+        </div>
+        <div class="form-group">
+            <label for="">Sabor</label>
+            <input class="form-control" type="text" formControlName="sabor">
+        </div>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+    {{fecha}}
+</div>
