@@ -1,0 +1,22 @@
+.alert {
+    margin-top: 5px;
+}
+
+.formulario {
+    background-color: rgb(20, 125, 224);
+}
+
+hr {
+    border: 1px solid;
+}
+
+.containerForm {
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.input-group-prepend>label {
+    min-width: 230px;
+}
